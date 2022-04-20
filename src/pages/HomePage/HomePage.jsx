@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Header(props) {
+function HomePage(props) {
     return (
         <div></div>
     );
 }
 
-export default Header;
+export default HomePage;

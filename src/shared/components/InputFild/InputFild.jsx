@@ -1,9 +1,9 @@
 import React from 'react';
 
-function PublicRoute(props) {
+function InputFild(props) {
     return (
         <div></div>
     );
 }
 
-export default PublicRoute;
+export default InputFild;
