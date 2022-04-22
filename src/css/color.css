@@ -1,0 +1,9 @@
+/* Основные цвета */
+:root {
+  --main-bg-color: #e5e5e5;
+  --accent-color: #ff6b01;
+  --secondary-text-colour: #000000;
+  --footer-colour: #02172a;
+  --footer-text-color: rgba(255, 255, 255, 0.4);
+  --btn-border-color: #ced2d1;
+}
