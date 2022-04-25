@@ -1,15 +1,24 @@
 import React from "react";
+// import { useNavigate } from "react-router-dom";
 import ResDiagram from "../../modules/ResDiagram/ResDiagram";
 import s from "./ResultPage.module.css";
-import cat from "../../images/cat-mob.png";
+import cat from "../../images/oops.png";
+// import cat1 from "../../images/cat-desktop.png";
+// import cat2 from "../../images/hurrah.png";
 
 function ResultsPage(props) {
+  // const history = useNavigate();
+  // const tryAgain = () => {
+  //   history("/test");
+  // };
+
   const raiting = () => {
-    const percentValue = 80 / (20 / 100);
+    const percentValue = 30 / (70 / 100);
     if (percentValue <= 50) {
       return {
         short: "Very bad!",
         full: "You need spend more time for learn materials.",
+        // img: "cat",
       };
     }
 
@@ -17,6 +26,7 @@ function ResultsPage(props) {
       return {
         short: "Not bad!",
         full: "But you still need to learn some materials.",
+        // img: "../../images/cat-mob.png",
       };
     }
 
@@ -24,6 +34,7 @@ function ResultsPage(props) {
       return {
         short: "Fine!",
         full: "You're awesome! Your result is very good.",
+        // img: "../../images/hurrah.jpg",
       };
     }
   };
@@ -47,7 +58,12 @@ function ResultsPage(props) {
         <img className={s.resultImg} src={cat} alt="cat" />
         <h3 className={s.resultContText}>{raiting().short}</h3>
         <p className={s.resultContInfo}>{raiting().full}</p>
-        <button className={s.resultButton}>Try again</button>
+        <button
+          className={s.resultButton}
+          // onClick={tryAgain}
+        >
+          Try again
+        </button>
       </div>
     </section>
   );

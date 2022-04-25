@@ -11,7 +11,7 @@
     margin-bottom: 12px;
     font-weight: 700;
     font-size: 12px;
-    line-height: 15px;
+    line-height: calc(15/12);
     text-align: center;
     letter-spacing: 0.02em;
     
@@ -21,7 +21,7 @@
     margin-bottom: 16px;
     font-weight: 500;
     font-size: 10px;
-    line-height: 12px;
+    line-height: calc(12/10);
     text-align: center;
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -29,7 +29,6 @@
     color: #000000;
 }
 
-/* ////////////////////////////////////////////////////////////////////////// */
 
 .containerResult {
     display: flex;
@@ -43,7 +42,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 10px;
-    line-height: 12px;
+    line-height:calc(12/10);
     letter-spacing: 0.02em;
 
     color: #000000;
@@ -62,19 +61,19 @@
 .result {
     font-weight: 700;
 }
-/* ///////////////////////////////////////////////////////////////// */
 
 .resultCont{
     text-align: center;
 }
-.resultsImg{
+.resultImg{
     margin-bottom: 20px;
+    width: 120px;
 }
 .resultContText{
     margin-bottom: 18px;
     font-weight: 700;
     font-size: 16px;
-    line-height: 20px;
+    line-height: calc(20/16);
     letter-spacing: 0.02em;
     
     color: #000000;
@@ -83,7 +82,7 @@
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 10px;
-    line-height: 12px;
+    line-height:calc(12/10);
     letter-spacing: 0.02em;
     
     color: #000000;
@@ -95,7 +94,7 @@
     background-color: var(--accent-color);
     text-align: center;
     font-size: 14px;
-    line-height: 16px;
+    line-height:calc(16/14);
     font-weight: 500;
     border-color: transparent;
 }
@@ -113,16 +112,16 @@
     .results {
         margin-bottom: 8px;
         font-size: 22px;
-        line-height: 27px;
+        line-height:calc(27/22);
     }
     
     .resultsText {
         margin-bottom: 32px;
         font-size: 14px;
-        line-height: 17px;
+        line-height:calc(17/14);
     }
     
-    .resultsImg {
+    .resultImg {
         margin-bottom: 8px;
         width: 176px;
     }
@@ -130,16 +129,14 @@
     .resultContText {
         margin-bottom: 8px;
         font-size: 22px;
-        line-height: 30px;
+        line-height:calc(30/22);
     }
     
     .resultContInfo {
         margin-bottom: 40px;
         font-size: 20px;
-        line-height: 24px;
+        line-height:calc(24/20);
     }
-
-    /* /////////////////////////////////////////////////// */
 
     .containerResult {
         margin-bottom: 32px;
@@ -147,7 +144,7 @@
     
     .resText {
         font-size: 16px;
-        line-height: 19px;
+        line-height:calc(19/16);
     }
     
     .resTextBefore::before {
@@ -163,15 +160,4 @@
     .result {
         font-weight: 700;
     }
-    
-    /* .resultButton {
-        width: 182px;
-        height: 48px;
-        color: #fff;
-        background-color: var(--accent-color);
-        text-align: center;
-        font-size: 14px;
-        line-height: 17px;
-        border-color: transparent;
-    } */
 }

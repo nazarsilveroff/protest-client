@@ -1,11 +1,11 @@
 import React from "react";
+// import { useMediaQuery } from "react-responsive";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 import s from "./ResDiagram.module.css";
 
 const data = [
-  { name: "Correct", value: 80 },
-  { name: "Incorrect", value: 20 },
-  // { name: "Incorrect2", value: 3 },
+  { name: "Correct", value: 30 },
+  { name: "Incorrect", value: 70 },
 ];
 const COLORS = ["#FF6B09", "#D7D7D7"];
 
@@ -51,6 +51,7 @@ const renderActiveShape = (props) => {
         stroke="#000000"
         fill="none"
       />
+
       <rect
         width="12"
         height="12"
@@ -75,6 +76,7 @@ const renderActiveShape = (props) => {
 };
 
 function ResDiagram(props) {
+  // const isDesktop = useMediaQuery({ query: "(min-width: 481px)" });
   return (
     <div className={s.containerPie}>
       <ResponsiveContainer>
@@ -84,7 +86,7 @@ function ResDiagram(props) {
             data={data}
             // fill="#FF751D"
             label={renderActiveShape}
-            // outerRadius={50}
+            // outerRadius={100}
             // activeShape
           >
             {data.map((entry, index) => (
