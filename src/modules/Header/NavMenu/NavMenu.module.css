@@ -1,3 +1,6 @@
+.nav{
+  display: none;
+}
 .list {
   display: flex;
   align-items: center;
@@ -7,6 +10,7 @@
 }
 
 .activeLink {
+  text-decoration: none;
   border-bottom: 1px solid #ff6b09;
 }
 

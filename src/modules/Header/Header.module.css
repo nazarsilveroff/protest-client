@@ -7,47 +7,13 @@
   background-color: #f5f6fb;
 }
 
-.userName_circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.02em;
-  color: #555555;
-  margin-left: 60px;
-  margin-right: 20px;
-  background-color: #fff;
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-}
 
 .logo {
   width: 129px;
   height: 28px;
 }
 
-.userInfo {
-  height: 100%;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
 
-.menu {
-  width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  border-left: 1px solid #e2e3e5;
-}
-
-.signOutIcon {
-  cursor: pointer;
-}
 
 @media screen and (min-width: 768px) {
   .logo {
@@ -64,24 +30,6 @@
     color: black;
   }
 
-  .userName_circle {
-    margin-left: 40px;
-    margin-right: 8px;
-  }
-
-  .userName {
-    padding-right: 20px;
-    height: 100%;
-    display: flex;
-    border-right: 1px solid #e2e3e5;
-    align-items: center;
-  }
-
-  .signOut {
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -98,11 +46,4 @@
     color: black;
   }
 
-  .userName_circle {
-    margin-right: 20px;
-  }
-
-  .signOut {
-    width: 36px;
-  }
 }

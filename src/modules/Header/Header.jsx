@@ -1,84 +1,46 @@
 import s from "./Header.module.css";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import {useState} from "react";
+import {Link} from "react-router-dom";
 import logo from "../../images/logo.svg";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { RiLogoutBoxRLine } from "react-icons/ri";
-import HeaderMenu from "./HeaderMenu/HeaderMenu";
-import NavMenu from "./NavMenu/NavMenu";
-import Modal from "../Modal/Modal";
+import Modal from "../Modal";
+import UserInfo from "./UserInfo";
+import NavMenu from "./NavMenu";
+import ModalMenu from './ModalMenu'
 
 function Header() {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const breakPointTablet = 768;
-  const userName = "Dmitri";
+    return (
+        <>
+            <header className={s.header}>
+                <Link to={"/"}>
+                    <img src={logo} alt={"logo"} className={s.logo}/>
+                </Link>
 
-  const handleResizeWindow = () => setWidth(window.innerWidth);
+                <NavMenu isLoggedIn={isLoggedIn}/>
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResizeWindow);
-    return () => {
-      window.removeEventListener("resize", handleResizeWindow);
-    };
-  }, []);
+                <UserInfo isLoggedIn={isLoggedIn}
+                          setIsModalOpen={setIsModalOpen}
+                          setIsLoggedIn={setIsLoggedIn}
+                />
+            </header>
 
-  return (
-    <>
-      <header className={s.header}>
-        <Link to={"/"}>
-          <img src={logo} alt={"logo"} className={s.logo} />
-        </Link>
-        {width < breakPointTablet ? (
-          <div className={s.userInfo}>
-            {isLoggedIn && (
-              <div className={s.userName_circle}>{userName.slice(0, 1)}</div>
+            {isModalOpen && (
+                <Modal>
+                    <ModalMenu
+                        isLoggedIn={isLoggedIn}
+                        onLogOut={() => {
+                            setIsLoggedIn(false);
+                        }}
+                        onModalClose={() => {
+                            setIsModalOpen(false);
+                        }}
+                    />
+                </Modal>
             )}
-
-            <div className={s.menu}>
-              <GiHamburgerMenu size={15} onClick={() => setIsModalOpen(true)} />
-            </div>
-          </div>
-        ) : (
-          <>
-            <NavMenu isLoggedIn={isLoggedIn} />
-            {isLoggedIn && (
-              <div className={s.userInfo}>
-                <div className={s.userName_circle}>{userName.slice(0, 1)}</div>
-                <div className={s.userName}>{userName}</div>
-                <div className={s.signOut}>
-                  <RiLogoutBoxRLine
-                    size={16}
-                    onClick={() => setIsLoggedIn(false)}
-                  />
-                </div>
-              </div>
-            )}
-          </>
-        )}
-      </header>
-
-      {isModalOpen && (
-        <Modal
-          onClose={() => {
-            setIsModalOpen(false);
-          }}
-        >
-          <HeaderMenu
-            isLoggedIn={isLoggedIn}
-            onLogOut={() => {
-              setIsLoggedIn(false);
-            }}
-            onModalClose={() => {
-              setIsModalOpen(false);
-            }}
-          />
-        </Modal>
-      )}
-    </>
-  );
+        </>
+    );
 }
 
 export default Header;

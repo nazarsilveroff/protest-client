@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
-import s from "./HeaderMenu.module.css";
+import s from "./ModalMenu.module.css";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../images/logo.svg";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import { MdClose } from "react-icons/md";
 
-function HeaderMenu({ isLoggedIn, onLogOut, onModalClose }) {
+function ModalMenu({ isLoggedIn, onLogOut, onModalClose }) {
   const userName = "Dmitri";
 
   return (
@@ -70,10 +70,10 @@ function HeaderMenu({ isLoggedIn, onLogOut, onModalClose }) {
   );
 }
 
-HeaderMenu.propTypes = {
+ModalMenu.propTypes = {
   onLogOut: PropTypes.func,
   isLoggedIn: PropTypes.bool,
   onModalClose: PropTypes.func,
 };
 
-export default HeaderMenu;
+export default ModalMenu;
