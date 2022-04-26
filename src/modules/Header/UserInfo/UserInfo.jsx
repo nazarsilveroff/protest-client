@@ -11,7 +11,7 @@ function UserInfo({isLoggedIn, setIsModalOpen, setIsLoggedIn}) {
 
     const userName = "Dmitri";
 
-    if (width <= breakPointTablet) {
+    if (width < breakPointTablet) {
         return (
             <div className={s.userInfo}>
                 {isLoggedIn && (
