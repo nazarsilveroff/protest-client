@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
-
 import { useDispatch } from "react-redux";
 
 import { getTypeTest } from "../../redux/test/test-operations";
@@ -14,7 +13,6 @@ function HomePage(props) {
   const onClick = (typeOfTest) => {
     dispatch(getTypeTest(typeOfTest));
   };
-
   return (
     <main className={styles.container}>
       <div className={styles.quote}>
