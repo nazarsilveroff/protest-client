@@ -1,0 +1,78 @@
+.section{
+    padding: 42px 0 117px 0;
+    background-image: url(../../images/pic\ 1mob.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: 60%;
+    background-position-y: 60%;
+}
+.container {
+    max-width: 480px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.materialsText {
+    width: 150px;
+    height: 75px;
+    margin-bottom: 8px;
+
+    font-weight: 700;
+    font-size: 22px;
+    line-height: calc(30/22);
+    letter-spacing: 0.02em;
+    
+    color: var(--secondary-text-colour);
+    border-bottom: 1px solid #00122F;
+}
+.materialsList {
+    margin-bottom: 32px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: calc(22/14);
+    letter-spacing: 0.02em;
+    
+    color: var(--secondary-text-colour);
+}
+
+.materialsLink{
+    color: var(--secondary-text-colour);
+    cursor: pointer;
+}
+
+@media screen and (min-width: 480px){
+.section {
+    background-image: url(../../images/pic\ 1tablet.jpg);
+}
+}
+
+@media screen and (min-width: 768px){
+    .section {
+        padding: 182px 0 356px 0;
+        background-image: url(../../images/pic\ 1tablet.jpg);
+    }
+    
+    .container {
+        max-width: 716px;
+    }
+    .materialsText {
+        width: 336px;
+        height: 55px;
+        margin-bottom: 24px;
+    }
+    .materialsList{    
+        margin-left: 75px;
+}
+}
+@media screen and (min-width: 1280px) {
+    .section {
+        padding-top: 100px;
+        padding-bottom: 272px;
+        background-image: url(../../images/pic1desktop.jpg);
+        background-position-y: 0;
+    }
+    
+    .container {
+        max-width: 1228px;
+    }
+}
