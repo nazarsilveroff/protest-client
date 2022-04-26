@@ -3,7 +3,6 @@ p {
 }
 
 .container {
-  box-sizing: border-box;
   padding-left: 20px;
   padding-right: 20px;
   margin: 34px auto 40px auto;
@@ -96,7 +95,6 @@ p {
 .btn2 {
   padding-left: 88px;
   padding-right: 88px;
-  padding-bottom: 40px;
 
   background: #ff6b01;
 }
@@ -106,8 +104,8 @@ p {
   box-shadow: 0px 5px 25px #ff6b01;
 }
 
-.icon {
-  padding-top: 32px;
+.testName {
+  padding-bottom: 32px;
 }
 
 .btn:hover .icon,

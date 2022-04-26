@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 
 import { getTypeTest } from "../../redux/test/test-operations";
 
-import styles from "./HomePage.module.css";
+import s from "./HomePage.module.css";
 
 function HomePage(props) {
   const dispatch = useDispatch();
@@ -14,30 +14,31 @@ function HomePage(props) {
     dispatch(getTypeTest(typeOfTest));
   };
   return (
-    <main className={styles.container}>
-      <div className={styles.quote}>
+    <main className={s.container}>
+      <div className={s.quote}>
         <p>“Regression testing. What is it?</p>
         <p>If the system compiles, that's good, if it boots, that's great!”</p>
       </div>
 
-      <p className={styles.author}>Linus Torvalds</p>
-      <p className={styles.details}>Linux kernel creator, hacker, 1969</p>
+      <p className={s.author}>Linus Torvalds</p>
+      <p className={s.details}>Linux kernel creator, hacker, 1969</p>
 
-      <div className={styles.btnBox}>
+      <div className={s.btnBox}>
         <Link
           to="/test"
-          className={`${styles.btn} ${styles.btn1}`}
+          className={`${s.btn} ${s.btn1}`}
           onClick={() => onClick("tech")}
         >
-          QA technical training <BsArrowRight className={styles.icon} />
+          <span className={s.testName}>QA technical training</span>
+          <BsArrowRight className={s.icon} />
         </Link>
         <Link
           to="/test"
-          className={`${styles.btn} ${styles.btn2}`}
+          className={`${s.btn} ${s.btn2}`}
           onClick={() => onClick("theory")}
         >
-          Testing theory
-          <BsArrowRight className={styles.icon} />
+          <span className={s.testName}>Testing theory</span>
+          <BsArrowRight className={s.icon} />
         </Link>
       </div>
     </main>
