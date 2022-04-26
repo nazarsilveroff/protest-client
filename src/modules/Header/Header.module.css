@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 68px;
+  border-bottom: 1px solid #e2e3e5;
+  padding-left: 20px;
+  background-color: #f5f6fb;
+}
+
+
+.logo {
+  width: 129px;
+  height: 28px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .logo {
+    margin-right: 127px;
+  }
+
+  .header {
+    padding-left: 32px;
+    padding-right: 32px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.02em;
+    color: black;
+  }
+
+}
+
+@media screen and (min-width: 1280px) {
+  .logo {
+    margin-right: 548px;
+  }
+
+  .header {
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: black;
+  }
+
+}
