@@ -1,10 +1,16 @@
 .section{
     padding: 42px 0 117px 0;
-    background-image: url(../../images/pic\ 1mob.jpg);
+    background-image: url(../../images/pic-mob-1x.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: 60%;
-    background-position-y: 60%;
+    background-position: center;
+}
+@media screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
+    .section {
+        background-image: url(../../images/pic-mob-2x.jpg);
+    }
 }
 .container {
     max-width: 480px;
@@ -25,7 +31,7 @@
     border-bottom: 1px solid #00122F;
 }
 .materialsList {
-    margin-bottom: 32px;
+    margin: 0 0 32px 15px;
 
     font-weight: 500;
     font-size: 14px;
@@ -34,24 +40,31 @@
     
     color: var(--secondary-text-colour);
 }
-
+.materialsItem{
+    list-style: auto;
+}
 .materialsLink{
     color: var(--secondary-text-colour);
     cursor: pointer;
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 480px){
 .section {
-    background-image: url(../../images/pic\ 1tablet.jpg);
-}
+        padding: 182px 0 356px 0;
+        background-image: url(../../images/pic-tab-1x.jpg);
+        background-position: center;
+    }
+@media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        .section {
+            background-image: url(../../images/pic-tab-2x.jpg);
+        }
+    }
 }
 
 @media screen and (min-width: 768px){
-    .section {
-        padding: 182px 0 356px 0;
-        background-image: url(../../images/pic\ 1tablet.jpg);
-    }
-    
     .container {
         max-width: 716px;
     }
@@ -61,17 +74,23 @@
         margin-bottom: 24px;
     }
     .materialsList{    
-        margin-left: 75px;
+        margin-left: 90px;
 }
 }
 @media screen and (min-width: 1280px) {
     .section {
         padding-top: 100px;
         padding-bottom: 272px;
-        background-image: url(../../images/pic1desktop.jpg);
+        background-image: url(../../images/pic-des-1x.jpg);
         background-position-y: 0;
     }
-    
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        .section {
+            background-image: url(../../images/pic-des-2x.jpg);
+        }
+    }
     .container {
         max-width: 1228px;
     }
