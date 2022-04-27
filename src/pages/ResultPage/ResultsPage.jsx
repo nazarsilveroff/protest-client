@@ -2,9 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import ResDiagram from "../../modules/ResDiagram/ResDiagram";
 import s from "./ResultPage.module.css";
-import catOops from "../../images/oops.png";
-import catHeart from "../../images/cat-desktop.png";
-import catHurrah from "../../images/hurrah.png";
+import catOops from "../../images/cat-oops.png";
+import catHeart from "../../images/cat-heart.png";
+import catHurrah from "../../images/cat-hurrah.png";
 
 function ResultsPage(props) {
   const history = useNavigate();
