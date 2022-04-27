@@ -1,16 +1,16 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ResDiagram from "../../modules/ResDiagram/ResDiagram";
 import s from "./ResultPage.module.css";
-import cat from "../../images/oops.png";
-// import cat1 from "../../images/cat-desktop.png";
-// import cat2 from "../../images/hurrah.png";
+import catOops from "../../images/oops.png";
+import catHeart from "../../images/cat-desktop.png";
+import catHurrah from "../../images/hurrah.png";
 
 function ResultsPage(props) {
-  // const history = useNavigate();
-  // const tryAgain = () => {
-  //   history("/test");
-  // };
+  const history = useNavigate();
+  const tryAgain = () => {
+    history("/test");
+  };
 
   const raiting = () => {
     const percentValue = 30 / (70 / 100);
@@ -18,15 +18,15 @@ function ResultsPage(props) {
       return {
         short: "Very bad!",
         full: "You need spend more time for learn materials.",
-        // img: "cat",
+        img: catOops,
       };
     }
 
-    if (percentValue > 50 && percentValue <= 80) {
+    if (percentValue >= 50 && percentValue <= 80) {
       return {
         short: "Not bad!",
         full: "But you still need to learn some materials.",
-        // img: "../../images/cat-mob.png",
+        img: catHeart,
       };
     }
 
@@ -34,7 +34,7 @@ function ResultsPage(props) {
       return {
         short: "Fine!",
         full: "You're awesome! Your result is very good.",
-        // img: "../../images/hurrah.jpg",
+        img: catHurrah,
       };
     }
   };
@@ -55,13 +55,10 @@ function ResultsPage(props) {
         </p>
       </div>
       <div className={s.resultCont}>
-        <img className={s.resultImg} src={cat} alt="cat" />
+        <img className={s.resultImg} src={raiting().img} alt="cat" />
         <h3 className={s.resultContText}>{raiting().short}</h3>
         <p className={s.resultContInfo}>{raiting().full}</p>
-        <button
-          className={s.resultButton}
-          // onClick={tryAgain}
-        >
+        <button className={s.resultButton} onClick={tryAgain}>
           Try again
         </button>
       </div>

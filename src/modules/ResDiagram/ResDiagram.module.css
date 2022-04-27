@@ -1,16 +1,15 @@
 .containerPie{
-    width: 100%;
+    width: 305px;
     height: 156px;
-    margin-bottom: 16px;
+    margin: 0 auto;
     font-size: 8px;
     line-height: 9px;
 }
 
 @media screen and (min-width: 768px){
     .containerPie {
-        width: 100%;
+        width: 500px;
         height: 285px;
-        margin-bottom: 32px;
         font-size: 16px;
         line-height: 19px;
     }
