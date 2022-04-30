@@ -1,0 +1,102 @@
+.sectionTest{
+    padding: 28px 0 20px 0;
+    background: #E5E5E5;
+}
+
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.containerTitle{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+.testTheory{
+    width: 110px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: calc(16/14);
+    letter-spacing: 0.02em;
+    
+    color: var(--secondary-text-colour);
+}
+.testFinish{
+    width: 130px;
+    height: 48px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: calc(12/10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.02em;
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+}
+.containerButton{
+    display: flex;
+    justify-content: space-between;
+}
+.testButton {
+    width: 55px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+.testButton:focus,
+.testButton:hover{
+background: var(--accent-color);
+}
+
+.testArrow:focus,
+.testArrow:hover {
+    fill: #FFFFFF;
+}
+.buttonText{
+    display: none;
+}
+@media screen and (min-width: 768px) {
+.sectionTest {
+    padding: 42px 0 20px 0;
+}
+.container {
+    max-width: 704px;
+}
+.containerTitle {
+    margin-bottom: 30px;
+}
+.testTheory {
+    font-size: 22px;
+    line-height: calc(27/22);
+}
+.testFinish {
+    width: 181px;
+    height: 54px;
+    font-size: 14px;
+    line-height: calc(17/14);
+}
+.testButton {
+    width: 210px;
+    justify-content: space-evenly;
+}
+.buttonText {
+    display: flex;
+}
+.testButton:focus,
+.testButton:hover {
+    color: #FFFFFF;
+    fill: #FFFFFF;
+}
+}
+@media screen and (min-width: 1280px) {
+.container {
+    max-width: 821px;
+}
+}
