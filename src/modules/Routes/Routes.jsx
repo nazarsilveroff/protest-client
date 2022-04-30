@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import LayoutPage from "../LayoutPage";
-import AuthPage from "../../pages/AuthPage";
+import AuthPage from "../../pages/AuthPage/AuthPage";
 import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import HomePage from "../../pages/HomePage";
