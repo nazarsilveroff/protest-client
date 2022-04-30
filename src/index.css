@@ -106,8 +106,16 @@ h6 {
   --footer-colour: #02172a;
   --footer-text-color: rgba(255, 255, 255, 0.4);
   --btn-border-color: #ced2d1;
+  --google-bg-color:#FAFAFA;
+  --error-inputs-color:red
 }
 
+.inputError{
+  margin-top: 3px;
+  color: var(--error-inputs-color);
+  font-size: 12px;
+  font-family: inherit;
+}
 
 @media screen and (min-width: 480px) {
   .container {
