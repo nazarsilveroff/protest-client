@@ -10,7 +10,7 @@ function NavMenu({isLoggedIn}) {
                     <li className={s.item}>
                         <NavLink
                             to="/contacts"
-                            exact
+
                             className={(navData) => (navData.isActive ? s.activeLink : s.link)}
                         >
                             Contacts
@@ -26,7 +26,6 @@ function NavMenu({isLoggedIn}) {
                         <li className={s.item}>
                             <NavLink
                                 to="/"
-                                exact
                                 className={(navData) =>
                                     navData.isActive ? s.activeLink : s.link
                                 }
@@ -37,7 +36,6 @@ function NavMenu({isLoggedIn}) {
                         <li className={s.item}>
                             <NavLink
                                 to="/materials"
-                                exact
                                 className={(navData) =>
                                     navData.isActive ? s.activeLink : s.link
                                 }
@@ -48,7 +46,6 @@ function NavMenu({isLoggedIn}) {
                     <li className={s.item}>
                         <NavLink
                             to="/contacts"
-                            exact
                             className={(navData) => (navData.isActive ? s.activeLink : s.link)}
                         >
                             Contacts
