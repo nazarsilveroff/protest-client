@@ -29,7 +29,6 @@ function ModalMenu({ isLoggedIn, onLogOut, onModalClose }) {
           <li className={s.item}>
             <NavLink
               to="/"
-              exact
               className={(navData) =>
                 navData.isActive ? s.activeLink : s.link
               }
@@ -42,7 +41,6 @@ function ModalMenu({ isLoggedIn, onLogOut, onModalClose }) {
           <li className={s.item}>
             <NavLink
               to="/materials"
-              exact
               className={(navData) =>
                 navData.isActive ? s.activeLink : s.link
               }
@@ -54,7 +52,6 @@ function ModalMenu({ isLoggedIn, onLogOut, onModalClose }) {
         <li className={s.item}>
           <NavLink
             to="/contacts"
-            exact
             className={(navData) => (navData.isActive ? s.activeLink : s.link)}
           >
             Contacts
