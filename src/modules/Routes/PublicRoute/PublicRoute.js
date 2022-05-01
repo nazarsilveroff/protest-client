@@ -6,7 +6,7 @@ function PublicRoute(props) {
     const isLogin = useAuth();
 
     if (isLogin) {
-        return <Navigate to="/test"/>
+        return <Navigate to="/"/>
     }
     return <Outlet/>
 }

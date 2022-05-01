@@ -4,6 +4,8 @@ import style from "../../pages/AuthPage/AuthPage.module.css";
 import InputField from "../../shared/components/InputField";
 import AuthButtons from "./AuthButtons";
 import {signInValidationSchema, signUpValidationSchema} from "./validation/schema";
+import {useDispatch} from "react-redux";
+import {signInOperation, signUpOperation} from "../../redux/auth/auth-operations";
 
 function AuthForm(props) {
     const signUp = {
@@ -15,6 +17,8 @@ function AuthForm(props) {
         email: "",
         password: "",
     }
+
+    const dispatch = useDispatch()
 
     const [activeBtn, setActiveBtn] = useState("signUp")
 
@@ -29,7 +33,7 @@ function AuthForm(props) {
             validationSchema={activeBtn === "signUp" ? signUpValidationSchema : signInValidationSchema}
             initialValues={inputValues}
             onSubmit={(values) => {
-
+                activeBtn === "signUp" ? dispatch(signUpOperation(values)) : dispatch(signInOperation(values))
             }}
         >
             {({isSubmitting}) => (
@@ -51,7 +55,7 @@ function AuthForm(props) {
                                 name="password"
                                 placeholder="Password"/>
 
-                    <AuthButtons setActiveBtn={setActiveBtn} activeBtn={activeBtn} />
+                    <AuthButtons setActiveBtn={setActiveBtn} activeBtn={activeBtn}/>
 
                 </Form>
             )}

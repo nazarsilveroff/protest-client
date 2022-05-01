@@ -4,9 +4,11 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../../images/logo.svg";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import { MdClose } from "react-icons/md";
+import {useSelector} from "react-redux";
+import {getUser} from "../../../redux/auth/auth-selectors";
 
-function ModalMenu({ isLoggedIn, onLogOut, onModalClose }) {
-  const userName = "Dmitri";
+function ModalMenu({ isLogin, onLogOut, onModalClose }) {
+  const {username} = useSelector(getUser)
 
   return (
     <div className={s.container}>
@@ -15,8 +17,8 @@ function ModalMenu({ isLoggedIn, onLogOut, onModalClose }) {
           <img src={logo} alt={"logo"} className={s.logo} />
         </Link>
         <div className={s.userInfo}>
-          {isLoggedIn && (
-            <div className={s.userName_circle}>{userName.slice(0, 1)}</div>
+          {isLogin && (
+            <div className={s.userName_circle}>{username.slice(0, 1)}</div>
           )}
 
           <div className={s.menu}>
@@ -25,7 +27,7 @@ function ModalMenu({ isLoggedIn, onLogOut, onModalClose }) {
         </div>
       </div>
       <ul className={s.list}>
-        {isLoggedIn && (
+        {isLogin && (
           <li className={s.item}>
             <NavLink
               to="/"
@@ -37,7 +39,7 @@ function ModalMenu({ isLoggedIn, onLogOut, onModalClose }) {
             </NavLink>
           </li>
         )}
-        {isLoggedIn && (
+        {isLogin && (
           <li className={s.item}>
             <NavLink
               to="/materials"
@@ -58,7 +60,7 @@ function ModalMenu({ isLoggedIn, onLogOut, onModalClose }) {
           </NavLink>
         </li>
       </ul>
-      {isLoggedIn && (
+      {isLogin && (
         <div className={s.signOut}>
           <RiLogoutBoxRLine size={16} onClick={onLogOut} />
         </div>

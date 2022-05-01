@@ -6,9 +6,14 @@ import Modal from "../Modal";
 import UserInfo from "./UserInfo";
 import NavMenu from "./NavMenu";
 import ModalMenu from './ModalMenu'
+import useAuth from "../../shared/hooks/useAuth";
+import {useDispatch} from "react-redux";
+import {logoutOperation} from "../../redux/auth/auth-operations";
 
 function Header() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const dispatch = useDispatch()
+    const isLogin = useAuth();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -18,20 +23,19 @@ function Header() {
                     <img src={logo} alt={"logo"} className={s.logo}/>
                 </Link>
 
-                <NavMenu isLoggedIn={isLoggedIn}/>
+                <NavMenu isLogin={isLogin}/>
 
-                <UserInfo isLoggedIn={isLoggedIn}
+                <UserInfo isLogin={isLogin}
                           setIsModalOpen={setIsModalOpen}
-                          setIsLoggedIn={setIsLoggedIn}
                 />
             </header>
 
             {isModalOpen && (
                 <Modal>
                     <ModalMenu
-                        isLoggedIn={isLoggedIn}
+                        isLogin={isLogin}
                         onLogOut={() => {
-                            setIsLoggedIn(false);
+                            dispatch(logoutOperation());
                         }}
                         onModalClose={() => {
                             setIsModalOpen(false);

@@ -2,20 +2,47 @@ import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:3001";
 
-const setToken = (token) =>
-  (axios.defaults.headers.common.Authorization = `Bearer ${token}`);
+const addToken = token => {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+}
 
-const register = async (credentials) =>
-  await axios.post("auth/sign-up", credentials);
 
-const login = async (credentials) =>
-  await axios.post("auth/sign-in", credentials);
-const logout = async () => await axios.post("auth/logout");
+const signup = async (params) => {
+    const {data} = await axios.post("/auth/sign-up", params);
+    addToken(data.token);
+    return data;
+}
 
-export {
-  setToken,
-  /* auth */
-  register,
-  login,
-  logout,
+const signin = async (params) => {
+    const {data} = await axios.post("/auth/sign-in", params);
+    addToken(data.token);
+    return data;
+}
+
+const googleOAuth = async (params) => {
+    const {data} = await axios.post("/auth/google", params);
+    addToken(data.token);
+    return data;
+}
+
+const getCurrent = async (token) => {
+    addToken(token);
+    const {data} = await axios.get("/user/current");
+    return data;
+}
+
+const logout = async (token) => {
+    addToken(token);
+    const {data} = await axios.get("/auth/logout");
+    return data;
+}
+
+const authAPI = {
+    signup,
+    signin,
+    logout,
+    googleOAuth,
+    getCurrent,
 };
+
+export default authAPI;
