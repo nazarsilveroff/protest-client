@@ -110,6 +110,13 @@ h6 {
   --error-inputs-color:red
 }
 
+#root{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .inputError{
   margin-top: 3px;
   color: var(--error-inputs-color);
@@ -134,3 +141,4 @@ h6 {
     width: 1200px;
   }
 }
+
