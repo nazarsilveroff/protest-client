@@ -12,12 +12,11 @@
 @media screen and (min-width: 768px) {
   .authMain {
     margin: 80px 0;
-    padding-left: 32px;
-    padding-right: 32px;
   }
 }
 
 @media screen and (min-width: 480px) {
+
   .container {
     width: 480px;
     margin: 0 auto;
@@ -25,8 +24,13 @@
 }
 
 @media screen and (min-width: 768px) {
+  .authMain{
+    padding: 0;
+  }
   .container {
     width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
@@ -114,6 +118,7 @@
   line-height: 12px;
   letter-spacing: 0.02em;
   margin-bottom: 20px;
+  /* margin-left: 100px; */
   display: block;
 }
 @media screen and (min-width: 768px) {
