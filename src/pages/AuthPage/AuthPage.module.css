@@ -15,11 +15,10 @@
     padding-right: 32px;
   }
 }
-@media screen and (min-width: 480px) {
   .container {
-    width: 480px;
+    max-width: 480px;
+    margin: 0 auto;
   }
-}
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
@@ -75,8 +74,8 @@
   line-height: 12px;
   letter-spacing: 0.02em;
   margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   display: block;
 }
 
@@ -102,9 +101,14 @@
   margin-right: auto;
   display: block;
 }
+@media screen and (min-width: 768px) {
+  .input{
+    width: 425px;
+  }
+}
 .buttonWrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .buttonSignUp {
@@ -119,7 +123,6 @@
   text-transform: uppercase;
   border-color: transparent;
   text-transform: uppercase;
-  margin-right: 20px;
 }
 .buttonSignUp:hover,
 .button:focus {
