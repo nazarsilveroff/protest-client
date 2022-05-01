@@ -4,88 +4,117 @@
 @import url("../../css/color.css");
 
 .authMain {
-    margin: 40px 0;
-    padding-left: 20px;
-    padding-right: 20px;
+  margin: 40px 0;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media screen and (min-width: 768px) {
-    .authMain {
-        margin: 80px 0;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
+  .authMain {
+    margin: 80px 0;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
-
 
 @media screen and (min-width: 480px) {
-    .container {
-        width: 480px;
-    }
+  .container {
+    width: 480px;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        width: 768px;
-    }
+  .container {
+    width: 768px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    .container {
-        width: 1200px;
-    }
+  .container {
+    width: 1200px;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .titleSection {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
+}
+@media screen and (min-width:1200px) {
+    .titleSection{
+        width: 420px;
+        margin-left: 124px;
+        /* height: 187px; */
+    }
 }
 
 .authTitle {
-    font-weight: 800;
-    font-size: 20px;
-    margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 
 @media screen and (min-width: 480px) {
-    .authTitle {
-        font-weight: 800;
-        font-size: 30px;
-    }
+  .authTitle {
+    font-weight: 800;
+    font-size: 30px;
+  }
 }
 
 .authDescription {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 20px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 @media screen and (min-width: 480px) {
-    .authDescription {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 36px;
-    }
+  .authDescription {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 36px;
+  }
 }
 
 .boldSymbol {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .formSection {
-    background: #ffffff;
-    padding: 40px 20px;
-    box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
-    margin: 0 auto;
+  background: #ffffff;
+  padding: 40px 20px;
+  box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
+  margin: 0 auto;
 }
-
+@media screen and (max-width: 479px) {
+  .formDescription {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 480px) {
+  .formDescription {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .formDescription {
+    margin-left: 153px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .formDescription {
+    margin-left: 5px;
+  }
+}
 .formDescription {
   font-weight: 500;
   font-size: 10px;
   line-height: 12px;
   letter-spacing: 0.02em;
   margin-bottom: 20px;
-  /* margin-left: auto;
-  margin-right: auto; */
+  /* margin-left: 100px; */
   display: block;
 }
 
@@ -93,14 +122,28 @@
   display: flex;
   flex-direction: column;
 }
-.googleBtn {
+.googleAuth {
   width: 159px;
   height: 51px;
   box-shadow: 0px 2px 2px 0px #0000001a;
   background-color: #ffffff;
   margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+}
+@media screen and (max-width: 767px) {
+  .googleAuth {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .googleAuth {
+    margin-left: 153px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .googleAuth {
+    margin-left: 5px;
+  }
 }
 .input {
   width: 240px;
@@ -112,13 +155,13 @@
   display: block;
 }
 @media screen and (min-width: 768px) {
-  .input{
+  .input {
     width: 425px;
   }
 }
 .buttonWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .buttonSignUp {
@@ -136,69 +179,70 @@
 }
 
 .googleAuth > div {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 .googleAuth > span {
-    font-family: inherit !important;
-    font-weight: 700 !important;
-    font-size: 14px !important;
-    line-height: 1.2 !important;
-    letter-spacing: 0.02em !important;
-    color: #000000 !important;
+  font-family: inherit !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.02em !important;
+  color: #000000 !important;
 }
 
 .label {
-    display: inline-block;
-    margin-bottom: 20px;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .input {
-    width: 240px;
-    height: 56px;
-    border: 1px solid #ced2d1;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding-left: 20px;
+  width: 240px;
+  height: 56px;
+  border: 1px solid #ced2d1;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.buttonWrapper {
-    display: flex;
-    justify-content: center;
+@media screen and (min-width: 780px) {
+  .input {
+    width: 425px;
+  }
 }
 
 .btn {
-    width: 109px;
-    height: 60px;
-    text-align: center;
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 1.2;
-    text-transform: uppercase;
-    border-color: transparent;
-    text-transform: uppercase;
+  width: 110px;
+  height: 60px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  border-color: transparent;
+  text-transform: uppercase;
 }
 
 .btn:first-child {
-    margin-right: 20px;
+  margin-right: 8px;
 }
 
 .active {
-    color: var(--main-bg-text-color);
-    background-color: var(--accent-color);
+  color: var(--main-bg-text-color);
+  background-color: var(--accent-color);
 }
 
 .default {
-    background-color: #ffffff;
-    border: 1px solid #ced2d1;
+  background-color: #ffffff;
+  border: 1px solid #ced2d1;
 }
 
 @media screen and (min-width: 768px) {
-    .btn {
-        width: 210px;
-        height: 60px;
-        font-size: 12px;
-    }
+  .btn {
+    width: 210px;
+    height: 60px;
+    font-size: 12px;
+  }
 }
-
