@@ -12,7 +12,7 @@
   margin-right: auto;
   margin-bottom: 20px;
 }
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 768px) {
   .input {
     width: 425px;
   }
