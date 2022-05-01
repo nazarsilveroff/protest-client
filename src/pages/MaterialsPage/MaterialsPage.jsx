@@ -3,7 +3,7 @@ import s from "./MaterialsPage.module.css";
 
 function MaterialsPage(props) {
   return (
-    <section className={s.section}>
+    <main className={s.section}>
       <div className={s.container}>
         <h2 className={s.materialsText}>Useful literature</h2>
         <ol className={s.materialsList}>
@@ -53,7 +53,7 @@ function MaterialsPage(props) {
           </li>
         </ol>
       </div>
-    </section>
+    </main>
   );
 }
 

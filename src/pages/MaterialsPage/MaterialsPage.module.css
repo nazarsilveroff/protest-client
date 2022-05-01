@@ -1,9 +1,9 @@
 .section{
-    padding: 42px 0 117px 0;
+    padding: 45% 0 55% 0;
     background-image: url(../../images/pic-mob-1x.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 90%;
 }
 @media screen and (min-device-pixel-ratio: 2),
 screen and (min-resolution: 192dpi),

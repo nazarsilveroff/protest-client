@@ -7,7 +7,6 @@
     line-height: 1.33;
     letter-spacing: 0.02em;
     color: #555555;
-    margin-left: 60px;
     margin-right: 20px;
     background-color: #fff;
     border-radius: 50%;
@@ -17,9 +16,10 @@
 
 .userInfo {
     height: 100%;
-    margin-left: auto;
+    width: fit-content;
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
 .signOutIcon {
@@ -37,12 +37,11 @@
 
 @media screen and (min-width: 768px) {
     .userName_circle {
-        margin-left: 40px;
-        margin-right: 8px;
+        margin-right: 10px;
     }
 
     .userName {
-        padding-right: 20px;
+        padding-right: 10px;
         height: 100%;
         display: flex;
         border-right: 1px solid #e2e3e5;
@@ -53,6 +52,7 @@
         display: flex;
         align-items: center;
         padding-left: 20px;
+        margin-right: 35px;
     }
 }
 @media screen and (min-width: 1280px) {
@@ -62,5 +62,6 @@
 
     .signOut {
         width: 36px;
+        margin-right: 0;
     }
 }

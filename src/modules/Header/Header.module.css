@@ -1,14 +1,15 @@
 .header {
   display: flex;
   align-items: center;
-  height: 68px;
+  justify-content: space-between;
+  min-height: 68px;
   border-bottom: 1px solid #e2e3e5;
-  padding-left: 20px;
   background-color: #f5f6fb;
 }
 
 
 .logo {
+  margin-left: 20px;
   width: 129px;
   height: 28px;
 }
@@ -21,8 +22,6 @@
   }
 
   .header {
-    padding-left: 32px;
-    padding-right: 32px;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;

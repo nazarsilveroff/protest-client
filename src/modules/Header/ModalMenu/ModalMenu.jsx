@@ -34,6 +34,7 @@ function ModalMenu({ isLogin, onLogOut, onModalClose }) {
               className={(navData) =>
                 navData.isActive ? s.activeLink : s.link
               }
+              onClick={onModalClose}
             >
               Home
             </NavLink>
@@ -46,6 +47,7 @@ function ModalMenu({ isLogin, onLogOut, onModalClose }) {
               className={(navData) =>
                 navData.isActive ? s.activeLink : s.link
               }
+              onClick={onModalClose}
             >
               Materials
             </NavLink>
@@ -55,6 +57,7 @@ function ModalMenu({ isLogin, onLogOut, onModalClose }) {
           <NavLink
             to="/contacts"
             className={(navData) => (navData.isActive ? s.activeLink : s.link)}
+            onClick={onModalClose}
           >
             Contacts
           </NavLink>
