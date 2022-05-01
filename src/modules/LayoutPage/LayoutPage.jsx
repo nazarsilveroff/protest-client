@@ -9,7 +9,6 @@ function LayoutPage(props) {
     <>
       <Header />
       <Outlet />
-      <AuthPage />
       <Footer />
     </>
   );
