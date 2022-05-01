@@ -1,0 +1,23 @@
+@import url(../../css/color.css);
+@import url(../../css/reset.css);
+.input {
+  width: 240px;
+  height: 56px;
+  border: 1px solid var(--btn-border-color);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 780px) {
+  .input {
+    width: 425px;
+  }
+}
+.label {
+  display: block;
+  margin-bottom: 20px;
+}

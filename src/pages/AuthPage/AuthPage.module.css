@@ -41,12 +41,12 @@
 .titleSection {
   margin-bottom: 24px;
 }
-@media screen and (min-width:1200px) {
-    .titleSection{
-        width: 420px;
-        margin-left: 124px;
-        /* height: 187px; */
-    }
+@media screen and (min-width: 1200px) {
+  .titleSection {
+    width: 420px;
+    margin-left: 124px;
+    /* height: 187px; */
+  }
 }
 
 .authTitle {
@@ -117,6 +117,14 @@
   /* margin-left: 100px; */
   display: block;
 }
+@media screen and (min-width: 768px) {
+  .formDescription {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+}
 
 .formWrapper {
   display: flex;
@@ -159,24 +167,6 @@
     width: 425px;
   }
 }
-.buttonWrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.buttonSignUp {
-  width: 109px;
-  height: 60px;
-  color: var(--main-bg-text-color);
-  background-color: var(--accent-color);
-  text-align: center;
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-transform: uppercase;
-  border-color: transparent;
-  text-transform: uppercase;
-}
 
 .googleAuth > div {
   margin: 0 !important;
@@ -189,60 +179,4 @@
   line-height: 1.2 !important;
   letter-spacing: 0.02em !important;
   color: #000000 !important;
-}
-
-.label {
-  display: block;
-  margin-bottom: 20px;
-}
-
-.input {
-  width: 240px;
-  height: 56px;
-  border: 1px solid #ced2d1;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding-left: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (min-width: 780px) {
-  .input {
-    width: 425px;
-  }
-}
-
-.btn {
-  width: 110px;
-  height: 60px;
-  text-align: center;
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-transform: uppercase;
-  border-color: transparent;
-  text-transform: uppercase;
-}
-
-.btn:first-child {
-  margin-right: 8px;
-}
-
-.active {
-  color: var(--main-bg-text-color);
-  background-color: var(--accent-color);
-}
-
-.default {
-  background-color: #ffffff;
-  border: 1px solid #ced2d1;
-}
-
-@media screen and (min-width: 768px) {
-  .btn {
-    width: 210px;
-    height: 60px;
-    font-size: 12px;
-  }
 }

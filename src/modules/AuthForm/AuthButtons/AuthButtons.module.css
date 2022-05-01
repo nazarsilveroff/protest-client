@@ -1,0 +1,37 @@
+@import url(../../../css/color.css);
+@import url(../../../css/reset.css);
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  width: 109px;
+  height: 60px;
+  color: var(--main-bg-text-color);
+  background-color: var(--accent-color);
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  border-color: transparent;
+  text-transform: uppercase;
+}
+.active {
+  color: var(--main-bg-text-color);
+  background-color: var(--accent-color);
+}
+.default {
+  background-color: #ffffff;
+  border: 1px solid var(--btn-border-color);
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    width: 210px;
+    height: 60px;
+    font-size: 12px;
+  }
+}
+.btn:first-child {
+  margin-right: 8px;
+}
