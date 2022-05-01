@@ -2,8 +2,8 @@ import {NavLink} from "react-router-dom";
 import PropTypes from "prop-types";
 import s from "./NavMenu.module.css";
 
-function NavMenu({isLoggedIn}) {
-    if (!isLoggedIn) {
+function NavMenu({isLogin}) {
+    if (!isLogin) {
         return (
             <nav className={s.nav}>
                 <ul className={s.list}>

@@ -1,53 +1,76 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import * as api from "./api";
+import {createAsyncThunk} from "@reduxjs/toolkit";
 
-const Error = {
-  AUTH_FAILED: "Invalid email or password.",
-  UNKNOWN: "Unknown backend error occurred.",
-};
+import authAPI from "../auth/api";
 
-const register = createAsyncThunk(
-  "auth/sign-up",
-  async (credentials, { rejectWithValue }) => {
-    try {
-      await api.register(credentials);
-      const { data } = await api.login(credentials);
-      api.setToken(data.accessToken);
-      return data;
-    } catch (error) {
-      if (error.message === "Request failed with status code 409") {
-        return rejectWithValue("Provided email already exists");
-      }
-      return rejectWithValue(Error.UNKNOWN);
+export const signUpOperation = createAsyncThunk(
+    "auth/signup",
+    async (params, {rejectWithValue}) => {
+        try {
+            return await authAPI.signup(params);
+        } catch (error) {
+            return rejectWithValue(error);
+        }
     }
-  }
 );
 
-const login = createAsyncThunk(
-  "auth/sign-in",
-  async (credentials, { rejectWithValue }) => {
-    try {
-      const { data } = await api.login(credentials);
-      api.setToken(data.accessToken);
-      return data;
-    } catch (error) {
-      if (error.message === "Request failed with status code 403") {
-        return rejectWithValue("Email doesn't exist / Password is wrong");
-      }
-      return rejectWithValue(Error.UNKNOWN);
+export const signInOperation = createAsyncThunk(
+    "auth/login",
+    async (params, {rejectWithValue}) => {
+        try {
+            return await authAPI.signin(params);
+        } catch (error) {
+            return rejectWithValue(error);
+        }
     }
-  }
-);
-const logOut = createAsyncThunk(
-  "auth/logout",
-  async (_, { rejectWithValue }) => {
-    try {
-      await api.logout();
-      api.setToken("");
-    } catch (error) {
-      return rejectWithValue(Error.UNKNOWN);
-    }
-  }
 );
 
-export { register, login, logOut };
+export const googleOAuthOperation = createAsyncThunk(
+    "auth/login",
+    async (params, {rejectWithValue}) => {
+        try {
+            return await authAPI.googleOAuth(params);
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    }
+);
+
+export const currentOperation = createAsyncThunk(
+    "auth/current",
+    async (_, {getState, rejectWithValue}) => {
+        try {
+            const {auth} = getState();
+            return  await authAPI.getCurrent(auth.token);
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    },
+    {
+        condition: (_, {getState}) => {
+            const {auth} = getState();
+            if(!auth.token) {
+                return false;
+            }
+        }
+    }
+);
+
+export const logoutOperation = createAsyncThunk(
+    "auth/logout",
+    async (_, {getState,rejectWithValue}) => {
+        try {
+            const {auth} = getState();
+            return await authAPI.logout(auth.token);
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    },
+    {
+        condition: (_, {getState}) => {
+            const {auth} = getState();
+            if(!auth.token) {
+                return false;
+            }
+        }
+    }
+);

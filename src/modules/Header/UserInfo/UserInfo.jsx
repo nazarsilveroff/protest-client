@@ -3,19 +3,26 @@ import s from './UserInfo.module.css'
 import {GiHamburgerMenu} from "react-icons/gi";
 import {RiLogoutBoxRLine} from "react-icons/ri";
 import useResizeWindow from "../../../shared/hooks/useResizeWindow";
+import {useDispatch, useSelector} from "react-redux";
+import {logoutOperation} from "../../../redux/auth/auth-operations";
+import {getUser} from "../../../redux/auth/auth-selectors";
 
-function UserInfo({isLoggedIn, setIsModalOpen, setIsLoggedIn}) {
+
+function UserInfo({isLogin, setIsModalOpen}) {
+
+    const dispatch = useDispatch()
 
     const width = useResizeWindow()
     const breakPointTablet = 768;
 
-    const userName = "Dmitri";
+
+    const {username} = useSelector(getUser)
 
     if (width < breakPointTablet) {
         return (
             <div className={s.userInfo}>
-                {isLoggedIn && (
-                    <div className={s.userName_circle}>{userName.slice(0, 1)}</div>
+                {isLogin && (
+                    <div className={s.userName_circle}>{username.slice(0, 1)}</div>
                 )}
 
                 <div className={s.menu}>
@@ -23,15 +30,15 @@ function UserInfo({isLoggedIn, setIsModalOpen, setIsLoggedIn}) {
                 </div>
             </div>
         );
-    } else if (isLoggedIn) {
+    } else if (isLogin) {
         return (
             <div className={s.userInfo}>
-                <div className={s.userName_circle}>{userName.slice(0, 1)}</div>
-                <div className={s.userName}>{userName}</div>
+                <div className={s.userName_circle}>{username.slice(0, 1)}</div>
+                <div className={s.userName}>{username}</div>
                 <div className={s.signOut}>
                     <RiLogoutBoxRLine
                         size={16}
-                        onClick={() => setIsLoggedIn(false)}
+                        onClick={() => dispatch(logoutOperation())}
                     />
                 </div>
             </div>
