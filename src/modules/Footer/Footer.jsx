@@ -20,7 +20,10 @@ function Footer(props) {
           </p>
           <p className={s.footerText}>
             by
-            <NavLink to="/" className={`${s.footerText} ${s.footerTeam}`}>
+            <NavLink
+              to="/contacts"
+              className={`${s.footerText} ${s.footerTeam}`}
+            >
               GoIT Students
             </NavLink>
           </p>
