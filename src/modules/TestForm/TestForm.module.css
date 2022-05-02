@@ -2,7 +2,7 @@
     height: 456px;
     padding: 40px 20px;
     margin: 0 auto 20px auto;
-    background: #FFFFFF;
+    background: var(--white-color);
     
     box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
 }
@@ -15,7 +15,7 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     
-    color: #555555;
+    color: var(--secondaryTextColor);
 }
 .testNumber{
     font-weight: 700;
@@ -75,7 +75,7 @@
     height: 16px;
     border: 1px var(--secondary-text-colour) solid;
     border-radius: 100%;
-    background: #fff;
+    background: var(--white-color);
 }
 
 .testAnswer:after {

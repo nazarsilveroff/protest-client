@@ -1,6 +1,6 @@
 .sectionTest{
     padding: 28px 0 20px 0;
-    background: #E5E5E5;
+    background: var(--main-bg-color);
 }
 
 .container {
@@ -35,7 +35,7 @@
     justify-content: center;
     letter-spacing: 0.02em;
     background-color: var(--accent-color);
-    color: #FFFFFF;
+    color: var(--white-color);
 }
 .containerButton{
     display: flex;
@@ -47,7 +47,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #FFFFFF;
+    background: var(--white-color);
     cursor: pointer;
 }
 .testButton:focus,
@@ -57,7 +57,7 @@ background: var(--accent-color);
 
 .testArrow:focus,
 .testArrow:hover {
-    fill: #FFFFFF;
+    fill: var(--white-color);
 }
 .buttonText{
     display: none;
@@ -91,8 +91,8 @@ background: var(--accent-color);
 }
 .testButton:focus,
 .testButton:hover {
-    color: #FFFFFF;
-    fill: #FFFFFF;
+    color: var(--white-color);
+    fill: var(--white-color);
 }
 }
 @media screen and (min-width: 1280px) {
