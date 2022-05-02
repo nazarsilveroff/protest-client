@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getTypeTest } from "./test-operations";
+import { getTypeTest, getQuestions } from "./test-operations";
 
 const initialState = {
   type: "",
@@ -23,6 +23,21 @@ const testSlice = createSlice({
       })
       .addCase(getTypeTest.rejected, (state, { payload }) => {
         state.error = payload;
+      })
+      
+      // ==========================================================
+
+      .addCase(getQuestions.pending, (state, _) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getQuestions.fulfilled, (state, { payload }) => {
+        state.questions = payload;
+        state.loading = false;
+      })
+      .addCase(getQuestions.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload.message.error;
       });
   },
 });

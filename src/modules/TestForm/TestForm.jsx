@@ -1,11 +1,11 @@
 import React from "react";
 import s from "./TestForm.module.css";
 
-function TestForm() {
+function TestForm({ questionNumber, questions }) {
   return (
     <div className={s.containerTest}>
       <p className={s.testQuestion}>
-        question <span className={s.testNumber}>3</span> / 12
+        question <span className={s.testNumber}>{questionNumber}</span> / 12
       </p>
       <h2 className={s.testText}>What is regression testing?</h2>
       <form>

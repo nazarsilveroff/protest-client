@@ -4,11 +4,11 @@ import TestForm from "../../modules/TestForm/TestForm";
 import s from "./TestPage.module.css";
 import Icons from "../../images/icons.svg";
 
-function TestPage() {
+function TestPage({ questions }) {
   // Кнопка "Назад" отключена
-  // const [isDisabledBackBtn, setIsDisabledBackBtn] = useState(true);
+  const [isDisabledBackBtn, setIsDisabledBackBtn] = useState(true);
   // Кнопка "Вперед" отключена
-  // const [isDisabledForwardBtn, setIsDisabledForwardBtn] = useState(true);
+  const [isDisabledForwardBtn, setIsDisabledForwardBtn] = useState(true);
   // номер вопроса
   const [questionNumber, setQuestionNumber] = useState(1);
 
@@ -22,16 +22,42 @@ function TestPage() {
     setQuestionNumber(questionNumber - 1);
   };
 
+  // Отключить кнопки
+  const isDisableButtons = () => {
+    // если questions = null чтобы не было ошибки
+    if (!questions) {
+      return;
+    }
+
+    // Кнопка "Вперед"  - disable
+    if (!questions[questionNumber - 1]) {
+      setIsDisabledForwardBtn(true);
+    }
+
+    if (questions[questionNumber - 1]) {
+      setIsDisabledForwardBtn(false);
+    }
+
+    // Кнопка "Назад" - disable
+    if (questionNumber === 1) {
+      setIsDisabledBackBtn(true);
+    }
+
+    if (questionNumber > 1) {
+      setIsDisabledBackBtn(false);
+    }
+  };
+
   return (
     <section className={s.sectionTest}>
       <div className={s.container}>
         <div className={s.containerTitle}>
-          <h2 className={s.testTheory}>[ Testing theory_ ]</h2>
+          <h2 className={s.testTheory}>[{}_]</h2>
           <Link to="/" className={s.testFinish}>
             Finish test
           </Link>
         </div>
-        <TestForm />
+        <TestForm questionNumber={questionNumber} />
         <div className={s.containerButton}>
           <button
             type="button"
