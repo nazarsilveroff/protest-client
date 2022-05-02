@@ -21,6 +21,7 @@ display: block;
 margin: 14px auto 20px;
 width: 130px;
 height: 1px;
+opacity: 0.15;
 background-color: var(--border-color);
 }
 .contactsItem{
