@@ -1,0 +1,165 @@
+.containerButton{
+    display: flex;
+    justify-content: space-between;
+}
+.testButton {
+    width: 55px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+.testButton:focus,
+.testButton:hover{
+    background: var(--accent-color);
+}
+
+.testArrow:focus,
+.testArrow:hover {
+    fill: #FFFFFF;
+}
+.buttonText{
+    display: none;
+}
+@media screen and (min-width: 768px) {
+    .testButton {
+        width: 210px;
+        justify-content: space-evenly;
+    }
+    .buttonText {
+        display: flex;
+    }
+    .testButton:focus,
+    .testButton:hover {
+        color: #FFFFFF;
+        fill: #FFFFFF;
+    }
+}
+
+
+/*================================================================*/
+
+
+
+.containerTest{
+    height: fit-content;
+    padding: 40px 20px;
+    margin: 0 auto 20px auto;
+    background: #FFFFFF;
+
+    box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
+}
+.testQuestion{
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: calc(12/10);
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #555555;
+}
+.testNumber{
+    font-weight: 700;
+    color: var(--accent-color);
+}
+.testText{
+    margin-bottom: 64px;
+    position: relative;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: calc(18/12);
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: var(--secondary-text-colour);
+}
+.testText::before {
+    content: '';
+    position: absolute;
+    width: 130px;
+    height: 1px;
+    background-color: var(--btn-border-color);
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.testLabel{
+    display: flex;
+    align-items: center;
+}
+.testLabel:not(:last-child){
+    margin-bottom: 20px;
+}
+.testInput {
+    display: none;
+}
+.testAnswer{
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow-wrap: break-word;
+    padding-left: 30px;
+    padding-top: 2px;
+    cursor: pointer;
+    font-size: 10px;
+    line-height: calc(12/10);
+    letter-spacing: 0.02em;
+
+    color: var(--secondary-text-colour)
+}
+.testAnswer:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: auto;
+    width: 16px;
+    height: 16px;
+    border: 1px var(--secondary-text-colour) solid;
+    border-radius: 100%;
+    background: #fff;
+}
+
+.testAnswer:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: auto;
+    left: 3px;
+    border-radius: 100%;
+}
+
+.testInput:checked+.testAnswer:after {
+    background: var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+    .containerTest {
+        height: fit-content;
+        padding: 40px 73px;
+    }
+    .testQuestion{
+        font-size: 14px;
+        line-height: calc(17/14);
+    }
+    .testText{
+        margin-bottom: 68px;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: calc(30/22);
+    }
+    .testText::before {
+        width: 336px;
+        bottom: -28px;
+    }
+    .testAnswer {
+        font-size: 16px;
+        line-height: calc(19/16);
+        padding-top: 0;
+    }
+}

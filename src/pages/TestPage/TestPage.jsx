@@ -1,88 +1,83 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import TestForm from "../../modules/TestForm/TestForm";
+import React, {useEffect, useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
 import s from "./TestPage.module.css";
-import Icons from "../../images/icons.svg";
 
-function TestPage({ questions }) {
-  // Кнопка "Назад" отключена
-  const [isDisabledBackBtn, setIsDisabledBackBtn] = useState(true);
-  // Кнопка "Вперед" отключена
-  const [isDisabledForwardBtn, setIsDisabledForwardBtn] = useState(true);
-  // номер вопроса
-  const [questionNumber, setQuestionNumber] = useState(1);
+import {useDispatch, useSelector} from "react-redux";
+import {getTypeOfTest} from "../../redux/test/test-selectors";
+import TestSlider from "../../modules/TestSlider";
+import testApi from "../../redux/test/test-api";
+import {getAnswersOperation} from "../../redux/test/test-operations";
 
-  // увеличить номер вопроса
-  const increaseQuestionNumber = () => {
-    setQuestionNumber(questionNumber + 1);
-  };
+function TestPage() {
+    const dispatch = useDispatch()
+    const typeOfTest = useSelector(getTypeOfTest)
 
-  // уменьшить номер вопроса
-  const decreaseQuestionNumber = () => {
-    setQuestionNumber(questionNumber - 1);
-  };
+    const navigate = useNavigate()
 
-  // Отключить кнопки
-  const isDisableButtons = () => {
-    // если questions = null чтобы не было ошибки
-    if (!questions) {
-      return;
+    const [answers, setAnswers] = useState([])
+
+    const [questions, setQuestions] = useState({
+        items: [],
+        error: '',
+        loading: false,
+    })
+
+    useEffect(() => {
+        async function gettingQuestions(type) {
+            setQuestions(prevState => ({
+                ...prevState,
+                loading: true,
+                error: ''
+            }))
+            try {
+                const data = await testApi.getQuestions(type)
+                setQuestions(prevState => ({
+                    ...prevState,
+                    loading: false,
+                    items: data
+                }))
+
+            } catch (err) {
+                setQuestions(prevState => ({
+                    ...prevState,
+                    loading: false,
+                    error: err.message
+                }))
+            }
+        }
+        typeOfTest && gettingQuestions(typeOfTest)
+    }, [typeOfTest])
+
+    const addAnswer = (newAnswer) => {
+        const duplicate = answers.find(answer => answer.questionId === newAnswer.questionId)
+        if (duplicate) {
+            if (JSON.stringify(duplicate) === JSON.stringify(newAnswer)) {
+                return
+            }
+            setAnswers(prevState => ([...prevState.filter(el => el.questionId !== newAnswer.questionId), newAnswer]))
+        } else {
+            setAnswers(prevState => ([...prevState, newAnswer]))
+        }
     }
 
-    // Кнопка "Вперед"  - disable
-    if (!questions[questionNumber - 1]) {
-      setIsDisabledForwardBtn(true);
+    const completeTest = () => {
+            dispatch(getAnswersOperation(answers))
+            navigate('/results')
     }
 
-    if (questions[questionNumber - 1]) {
-      setIsDisabledForwardBtn(false);
-    }
-
-    // Кнопка "Назад" - disable
-    if (questionNumber === 1) {
-      setIsDisabledBackBtn(true);
-    }
-
-    if (questionNumber > 1) {
-      setIsDisabledBackBtn(false);
-    }
-  };
-
-  return (
-    <section className={s.sectionTest}>
-      <div className={s.container}>
-        <div className={s.containerTitle}>
-          <h2 className={s.testTheory}>[{}_]</h2>
-          <Link to="/" className={s.testFinish}>
-            Finish test
-          </Link>
-        </div>
-        <TestForm questionNumber={questionNumber} />
-        <div className={s.containerButton}>
-          <button
-            type="button"
-            className={s.testButton}
-            onClick={decreaseQuestionNumber}
-          >
-            <svg className={s.testArrow} width="24px" height="16">
-              <use xlinkHref={`${Icons}#icon-arrow-left`}></use>
-            </svg>
-            <span className={s.buttonText}>Next question</span>
-          </button>
-          <button
-            type="button"
-            className={s.testButton}
-            onClick={increaseQuestionNumber}
-          >
-            <span className={s.buttonText}>Previous question</span>
-            <svg className={s.testArrow} width="24px" height="16">
-              <use xlinkHref={`${Icons}#icon-arrow-right`}></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </section>
-  );
+    return (
+        <main className={s.sectionTest}>
+            <div className={s.container}>
+                <div className={s.containerTitle}>
+                    <h2 className={s.testTheory}>[{typeOfTest === 'tech' ? "QA technical training" : "Testing theory"}_]</h2>
+                    <Link to="/" className={s.testFinish}>
+                        Finish test
+                    </Link>
+                </div>
+                <TestSlider questions={questions.items} callback={addAnswer} completeTest={completeTest}/>
+            </div>
+        </main>
+    );
 }
 
 export default TestPage;

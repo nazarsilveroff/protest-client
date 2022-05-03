@@ -37,7 +37,7 @@ const logout = async (token) => {
     return data;
 }
 
-const authAPI = {
+const authApi = {
     signup,
     signin,
     logout,
@@ -45,4 +45,4 @@ const authAPI = {
     getCurrent,
 };
 
-export default authAPI;
+export default authApi;

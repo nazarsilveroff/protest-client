@@ -1,29 +1,25 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-// import axios from 'axios';
+import {createAsyncThunk} from "@reduxjs/toolkit";
 
-const getTypeTest = createAsyncThunk(
-  "tests/getTypeTest",
-  async (typeOfTest, thunkAPI) => {
-    try {
-      return typeOfTest;
-    } catch (error) {
-      return thunkAPI.rejectWithValue("Something wrong :(");
+export const setTypeOfQuestionsOperation = createAsyncThunk(
+    "test/getTypeOfQuestions",
+    async (params, {rejectWithValue}) => {
+        try {
+            return params;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
     }
-  }
-);
+)
 
 
-// axios.defaults.baseURL = 'http://localhost:3003';
-
-const getQuestions = createAsyncThunk(
-  "tests/getQuestions",
-  async (questions, thunkAPI) => {
-    try {
-      return questions;
-    } catch (error) {
-      return thunkAPI.rejectWithValue("Something wrong :(");
+export const getAnswersOperation = createAsyncThunk(
+    "test/getAnswers",
+    async (params, {rejectWithValue}) => {
+        try {
+            return params;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
     }
-  }
-);
+)
 
-export { getTypeTest, getQuestions};

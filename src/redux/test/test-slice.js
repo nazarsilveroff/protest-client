@@ -1,45 +1,47 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-import { getTypeTest, getQuestions } from "./test-operations";
+import {createSlice} from "@reduxjs/toolkit";
+import {getAnswersOperation, setTypeOfQuestionsOperation} from "./test-operations";
 
 const initialState = {
-  type: "",
-  questions: [],
-  results: [],
-  error: null,
-  loading: false,
+    type: "",
+    answers: [],
+    error: null,
+    loading: false,
 };
 
 const testSlice = createSlice({
-  name: "test",
-  initialState,
-  extraReducers: (builder) => {
-    builder
-      .addCase(getTypeTest.pending, (state) => {
-        state.error = null;
-      })
-      .addCase(getTypeTest.fulfilled, (state, { payload }) => {
-        state.type = payload;
-      })
-      .addCase(getTypeTest.rejected, (state, { payload }) => {
-        state.error = payload;
-      })
-      
-      // ==========================================================
+    name: "test",
+    initialState,
+    extraReducers: {
 
-      .addCase(getQuestions.pending, (state, _) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(getQuestions.fulfilled, (state, { payload }) => {
-        state.questions = payload;
-        state.loading = false;
-      })
-      .addCase(getQuestions.rejected, (state, { payload }) => {
-        state.loading = false;
-        state.error = payload.message.error;
-      });
-  },
+        //set type of questions
+        [setTypeOfQuestionsOperation.pending]:(state)=>{
+            state.loading = true;
+            state.error = null;
+        },
+        [setTypeOfQuestionsOperation.fulfilled]:(state, {payload})=>{
+            state.type = payload;
+            state.loading = false;
+        },
+        [setTypeOfQuestionsOperation.rejected]: (state, {payload}) => {
+            state.loading = false;
+            state.error = payload;
+        },
+
+        //get answers
+        [getAnswersOperation.pending]:(state)=>{
+            state.loading = true;
+            state.error = null;
+        },
+        [getAnswersOperation.fulfilled]:(state, {payload})=>{
+            state.answers = payload;
+            state.loading = false;
+        },
+        [getAnswersOperation.rejected]: (state, {payload}) => {
+            state.loading = false;
+            state.error = payload;
+        },
+
+    },
 });
 
 export default testSlice.reducer;

@@ -1,12 +1,12 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
-import authAPI from "../auth/api";
+import authApi from "./auth-api";
 
 export const signUpOperation = createAsyncThunk(
     "auth/signup",
     async (params, {rejectWithValue}) => {
         try {
-            return await authAPI.signup(params);
+            return await authApi.signup(params);
         } catch (error) {
             return rejectWithValue(error);
         }
@@ -17,7 +17,7 @@ export const signInOperation = createAsyncThunk(
     "auth/login",
     async (params, {rejectWithValue}) => {
         try {
-            return await authAPI.signin(params);
+            return await authApi.signin(params);
         } catch (error) {
             return rejectWithValue(error);
         }
@@ -25,10 +25,10 @@ export const signInOperation = createAsyncThunk(
 );
 
 export const googleOAuthOperation = createAsyncThunk(
-    "auth/login",
+    "auth/googleOAuth",
     async (params, {rejectWithValue}) => {
         try {
-            return await authAPI.googleOAuth(params);
+            return await authApi.googleOAuth(params);
         } catch (error) {
             return rejectWithValue(error);
         }
@@ -40,7 +40,7 @@ export const currentOperation = createAsyncThunk(
     async (_, {getState, rejectWithValue}) => {
         try {
             const {auth} = getState();
-            return  await authAPI.getCurrent(auth.token);
+            return  await authApi.getCurrent(auth.token);
         } catch (error) {
             return rejectWithValue(error);
         }
@@ -60,7 +60,7 @@ export const logoutOperation = createAsyncThunk(
     async (_, {getState,rejectWithValue}) => {
         try {
             const {auth} = getState();
-            return await authAPI.logout(auth.token);
+            return await authApi.logout(auth.token);
         } catch (error) {
             return rejectWithValue(error);
         }
