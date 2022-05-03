@@ -1,4 +1,4 @@
-.section{
+.section {
     padding: 45% 0 55% 0;
     height: auto;
     background-image: url(../../images/pic-mob-1x.jpg);
@@ -6,29 +6,31 @@
     background-repeat: no-repeat;
     background-position: 90%;
 }
-@media screen and (min-device-pixel-ratio: 2),
-screen and (min-resolution: 192dpi),
-screen and (min-resolution: 2dppx) {
+
+@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
     .section {
         background-image: url(../../images/pic-mob-2x.jpg);
     }
 }
+
 .container {
     max-width: 480px;
     padding: 0 20px;
     margin: 0 auto;
 }
+
 .materialsText {
     width: 150px;
 
     font-weight: 700;
     font-size: 22px;
-    line-height: calc(30/22);
+    line-height: calc(30 / 22);
     letter-spacing: 0.02em;
-    
+
     color: var(--secondary-text-colour);
 }
-.materialsText::after{
+
+.materialsText::after {
     content: '';
     display: block;
     margin: 12px 0 8px;
@@ -37,67 +39,73 @@ screen and (min-resolution: 2dppx) {
     opacity: 0.15;
     background-color: var(--border-color);
 }
+
 .materialsList {
     margin: 0 0 32px 15px;
 
     font-weight: 500;
     font-size: 14px;
-    line-height: calc(22/14);
+    line-height: calc(22 / 14);
     letter-spacing: 0.02em;
-    
+
     color: var(--secondary-text-colour);
 }
-.materialsItem{
+
+.materialsItem {
     list-style: auto;
 }
-.materialsLink{
+
+.materialsLink {
     color: var(--secondary-text-colour);
     cursor: pointer;
     text-decoration: underline;
 }
 
-@media screen and (min-width: 480px){
-.section {
+@media screen and (min-width: 480px) {
+    .section {
         padding: 182px 0 356px 0;
         background-image: url(../../images/pic-tab-1x.jpg);
         background-position: center;
     }
-@media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
+
+    @media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
         .section {
             background-image: url(../../images/pic-tab-2x.jpg);
         }
     }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     .container {
         max-width: 716px;
     }
+
     .materialsText {
         width: 336px;
         margin-bottom: 24px;
     }
+
     .materialsText::after {
         margin: 20px 0 24px 0;
         width: 336px;
     }
-    .materialsList{    
+
+    .materialsList {
         margin-left: 90px;
         width: 254px;
+    }
 }
-}
+
 @media screen and (min-width: 1280px) {
     .section {
+        height: 100%;
         padding-top: 100px;
         padding-bottom: 272px;
         background-image: url(../../images/pic-des-1x.jpg);
         background-position-y: 0;
     }
-    @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
+
+    @media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
         .section {
             background-image: url(../../images/pic-des-2x.jpg);
         }
