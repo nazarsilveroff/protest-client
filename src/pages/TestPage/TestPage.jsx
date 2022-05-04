@@ -20,7 +20,7 @@ function TestPage() {
   const [questions, setQuestions] = useState({
     items: [],
     error: "",
-    loading: true,
+    loading: false,
   });
 
   useEffect(() => {
