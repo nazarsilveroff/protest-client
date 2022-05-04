@@ -16,14 +16,15 @@ function TestSlider({questions, callback, completeTest}) {
 
 
     const next = () => {
-        callback(answer)
-        if (questionNumber <= 12) {
-            setQuestionNumber(questionNumber + 1);
-            sliderRef.current.slickNext()
-        } else {
-            completeTest()
+        if(!!answer){
+            callback(answer)
+            if (questionNumber <= 12) {
+                setQuestionNumber(questionNumber + 1);
+                sliderRef.current.slickNext()
+            } else {
+                completeTest()
+            }
         }
-
     };
 
     const prev = () => {
@@ -61,7 +62,7 @@ function TestSlider({questions, callback, completeTest}) {
                             {question}?
                         </h2>
                         <form onChange={onChangeHandler}>
-                            {answers.map(answer => (
+                            {answers?.map(answer => (
                                 <label key={answer} className={s.testLabel}>
                                     <input className={s.testInput}
                                            value={JSON.stringify({questionId: id, answer})}
