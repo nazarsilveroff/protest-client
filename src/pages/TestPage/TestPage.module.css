@@ -73,6 +73,7 @@ background: var(--accent-color);
     margin-bottom: 30px;
 }
 .testTheory {
+    width: 165px;
     font-size: 22px;
     line-height: calc(27/22);
 }
