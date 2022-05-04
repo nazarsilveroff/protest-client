@@ -3,10 +3,10 @@ import GoogleLogin from "react-google-login";
 import {googleOAuthOperation} from "../../../redux/auth/auth-operations";
 import {useDispatch} from "react-redux";
 
+// const CLIENT_ID = process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID
+
 function GoogleAuth({styles}) {
     const dispatch = useDispatch()
-
-    const CLIENT_ID = process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID
 
     const handleLogin = async googleData => {
         const token = googleData.tokenId
@@ -15,7 +15,7 @@ function GoogleAuth({styles}) {
 
     return (
         <GoogleLogin
-            clientId={CLIENT_ID}
+            clientId={'997341739538-uk7se1vgnr5kn1q3f1lbsprrrh9dmgqs.apps.googleusercontent.com'}
             buttonText="Google"
             onSuccess={handleLogin}
             onFailure={handleLogin}

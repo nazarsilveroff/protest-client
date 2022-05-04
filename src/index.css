@@ -1,91 +1,96 @@
 body {
-  margin: 0;
-  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    margin: 0;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 /* Настройки общего сброса */
 * {
-  padding: 0;
-  margin: 0;
-  border: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :focus,
 :active {
-  outline: none;
+    outline: none;
 }
 
 a:focus,
 a:active {
-  outline: none;
+    outline: none;
 }
 
 *:hover,
 *:focus {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 
 nav,
 footer,
 header,
 aside {
-  display: block;
+    display: block;
 }
 
 html,
 body {
-  height: fit-content;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+    height: fit-content;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 input,
 button,
 textarea {
-  font-family: inherit;
+    font-family: inherit;
 }
 
 input::-ms-clear {
-  display: none;
+    display: none;
 }
+
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
+    padding: 0;
+    border: 0;
 }
+
 a,
 a:visited,
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 ul,
 li {
-  list-style: none;
+    list-style: none;
 }
+
 img {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 h1,
@@ -94,55 +99,61 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: inherit;
-  font-weight: 500;
+    font-size: inherit;
+    font-weight: 500;
 }
 
 /* Основные цвета */
 :root {
-  --main-bg-color: #e5e5e5;
-  --accent-color: #ff6b01;
-  --secondary-text-colour: #000000;
-  --footer-colour: #02172a;
-  --footer-text-color: rgba(255, 255, 255, 0.4);
-  --btn-border-color: #ced2d1;
-  --google-bg-color:#FAFAFA;
-  --error-inputs-color:red
+    --main-bg-color: #e5e5e5;
+    --accent-color: #ff6b01;
+    --secondary-text-colour: #000000;
+    --footer-colour: #02172a;
+    --footer-text-color: rgba(255, 255, 255, 0.4);
+    --btn-border-color: #ced2d1;
+    --google-bg-color: #FAFAFA;
+    --error-inputs-color: red
 }
 
-#root{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+#root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-main{
-  height: 100%;
+main {
+    height: 100%;
 }
 
-.inputError{
-  margin-top: 3px;
-  color: var(--error-inputs-color);
-  font-size: 12px;
-  font-family: inherit;
+@media screen and (max-height: 630px) {
+    main {
+        overflow: scroll;
+    }
+}
+
+.inputError {
+    margin-top: 3px;
+    color: var(--error-inputs-color);
+    font-size: 12px;
+    font-family: inherit;
 }
 
 @media screen and (min-width: 480px) {
-  .container {
-    width: 480px;
-  }
+    .container {
+        width: 480px;
+    }
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-  }
+    .container {
+        width: 768px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
-  .container {
-    width: 1200px;
-  }
+    .container {
+        width: 1200px;
+    }
 }
 

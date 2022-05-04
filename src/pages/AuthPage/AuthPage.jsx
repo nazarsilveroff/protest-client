@@ -3,8 +3,6 @@ import s from "./AuthPage.module.css";
 import AuthForm from "../../modules/AuthForm";
 import GoogleAuth from "../../modules/AuthForm/GoogleAuth";
 import Toastify from "../../modules/Tostify";
-import {useSelector} from "react-redux";
-import {getErrorMassage} from "../../redux/auth/auth-selectors";
 
 
 function AuthPage(props) {
