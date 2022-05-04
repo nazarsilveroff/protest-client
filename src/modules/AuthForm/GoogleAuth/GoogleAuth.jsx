@@ -6,7 +6,7 @@ import {useDispatch} from "react-redux";
 function GoogleAuth({styles}) {
     const dispatch = useDispatch()
 
-    const CLIENT_ID = `997341739538-uk7se1vgnr5kn1q3f1lbsprrrh9dmgqs.apps.googleusercontent.com`
+    const CLIENT_ID = process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID
 
     const handleLogin = async googleData => {
         const token = googleData.tokenId

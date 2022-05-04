@@ -1,6 +1,8 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3001";
+const SERVER_URL = process.env.REACT_APP_SERVER_BASE_URL
+
+axios.defaults.baseURL = SERVER_URL;
 
 const getQuestions = async (type) => {
         const {data: {questions}} = await axios.get(`qa-test/${type}`)
