@@ -37,7 +37,7 @@ const authSlice = createSlice({
         },
         [signUpOperation.rejected]: (state, {payload}) => {
             state.loading = false;
-            state.error = payload;
+            state.error = payload.response.data;
         },
 
 
@@ -54,7 +54,7 @@ const authSlice = createSlice({
         },
         [signInOperation.rejected]: (state, {payload}) => {
             state.loading = false;
-            state.error = payload;
+            state.error = payload.response.data;
         },
 
 
