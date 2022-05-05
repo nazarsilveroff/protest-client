@@ -89,10 +89,12 @@ function ResultsPage(props) {
     return (
         <>
             {error && <Toastify errFromParentState={error}/>}
-            <section className={s.section}>
+            <main className={s.section}>
                 {results.loading && <Loader/>}
                 <h2 className={s.results}>Results</h2>
-                <p className={s.resultsText}>[ Testing theory_]</p>
+                <p className={s.resultsText}>
+                    {typeOfTest === "tech" ? "QA technical training" : "Testing theory"}
+                </p>
                 <ResDiagram results={results.result}/>
                 <div className={s.containerResult}>
                     <p className={`${s.resText} ${s.resTextBefore}`}>
@@ -112,7 +114,7 @@ function ResultsPage(props) {
                         </button>
                     </div>
                 )}
-            </section>
+            </main>
         </>
     );
 }

@@ -108,6 +108,7 @@ h6 {
 
 html,
 body {
+    background-color: #f5f6fb;
     height: 100vh;
     width: 100%;
     font-size: 100%;
@@ -120,6 +121,7 @@ body {
 
 #root {
     height: 100%;
+    background-color: #f5f6fb;
     /*overflow: scroll;*/
     display: flex;
     flex-direction: column;
