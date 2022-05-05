@@ -47,17 +47,7 @@ aside {
     display: block;
 }
 
-html,
-body {
-    height: fit-content;
-    width: 100%;
-    font-size: 100%;
-    line-height: 1;
-    font-size: 14px;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
+
 
 input,
 button,
@@ -115,22 +105,37 @@ h6 {
     --error-inputs-color: red
 }
 
+
+html,
+body {
+    height: 100vh;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
 #root {
     height: 100%;
+    /*overflow: scroll;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 main {
-    height: 100%;
+    height: auto;
 }
 
-@media screen and (max-height: 630px) {
-    main {
-        overflow: scroll;
-    }
-}
+/*@media screen and (max-height: 630px) {*/
+/*    main {*/
+/*        overflow: scroll;*/
+/*    }*/
+/*}*/
+
 
 .inputError {
     margin-top: 3px;

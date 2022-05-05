@@ -18,7 +18,7 @@
 
 @media screen and (min-width: 768px) {
   .logo {
-    margin-right: 127px;
+    /*margin-right: 127px;*/
   }
 
   .header {
@@ -33,12 +33,12 @@
 
 @media screen and (min-width: 1280px) {
   .logo {
-    margin-right: 548px;
+    /*margin-right: 548px;*/
   }
 
   .header {
-    padding-left: 16px;
-    padding-right: 16px;
+    /*padding-left: 16px;*/
+    /*padding-right: 16px;*/
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;

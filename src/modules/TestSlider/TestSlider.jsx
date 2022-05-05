@@ -44,7 +44,8 @@ function TestSlider({questions, callback, completeTest}) {
         slidesToShow: 1,
         slidesToScroll: 1,
         lazyLoad: true,
-        arrows: false
+        arrows: false,
+        swipe:false
     };
 
     return (

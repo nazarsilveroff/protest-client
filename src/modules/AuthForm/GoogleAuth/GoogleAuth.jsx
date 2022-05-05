@@ -3,7 +3,7 @@ import GoogleLogin from "react-google-login";
 import {googleOAuthOperation} from "../../../redux/auth/auth-operations";
 import {useDispatch} from "react-redux";
 
-// const CLIENT_ID = process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID
+const CLIENT_ID = process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID
 
 function GoogleAuth({styles}) {
     const dispatch = useDispatch()
@@ -15,7 +15,7 @@ function GoogleAuth({styles}) {
 
     return (
         <GoogleLogin
-            clientId={'997341739538-uk7se1vgnr5kn1q3f1lbsprrrh9dmgqs.apps.googleusercontent.com'}
+            clientId={CLIENT_ID}
             buttonText="Google"
             onSuccess={handleLogin}
             onFailure={handleLogin}
